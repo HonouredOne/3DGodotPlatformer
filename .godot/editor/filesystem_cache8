@@ -1,11 +1,4 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699389104
+::res://::1699389434
 icon.svg::CompressedTexture2D::5713998155203346267::1699388582::1699388587::1::::<><>::
-::res://addons/::1677684530
-::res://addons/godot-git-plugin/::1677684530
-git_plugin.gdextension::GDExtension::-1::1677684530::0::1::::<><>::
-plugin.cfg::TextFile::-1::1677684530::0::1::::<><>::
-THIRDPARTY.md::TextFile::-1::1677684530::0::1::::<><>::
-::res://addons/godot-git-plugin/linux/::1677684530
-::res://addons/godot-git-plugin/macos/::1677684530
-::res://addons/godot-git-plugin/win64/::1677684530
+README.md::TextFile::-1::1699389398::0::1::::<><>::
