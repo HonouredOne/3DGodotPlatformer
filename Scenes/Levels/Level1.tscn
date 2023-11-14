@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://wa5j2ehjqb75"]
+
+[ext_resource type="PackedScene" uid="uid://bmt4cf2ksg4js" path="res://Scenes/Platforms/PlatformLarge.tscn" id="1_67toc"]
+[ext_resource type="PackedScene" uid="uid://b73d1s4iglg2j" path="res://Scenes/Characters/Player.tscn" id="2_h6m7e"]
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.596049, -0.710407, 0.374229, 0.241844, 0.603262, 0.759991, -0.765661, -0.362487, 0.531382, 0, 3.86817, 0)
+shadow_enabled = true
+
+[node name="PlatformLarge" parent="." instance=ExtResource("1_67toc")]
+
+[node name="Player" parent="." instance=ExtResource("2_h6m7e")]
