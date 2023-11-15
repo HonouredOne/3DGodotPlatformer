@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy72obsirviw3"]
+
+[ext_resource type="Script" path="res://Scripts/SpikeBlock.gd" id="1_u3n2t"]
+[ext_resource type="ArrayMesh" uid="uid://mvd3ie23bw83" path="res://Models/spikeBlock.obj" id="1_wifg4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bw1n"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lew5v"]
+radius = 0.452635
+
+[node name="SpikeBlock" type="Area3D"]
+script = ExtResource("1_u3n2t")
+
+[node name="RedModel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = ExtResource("1_wifg4")
+skeleton = NodePath("../..")
+surface_material_override/1 = SubResource("StandardMaterial3D_2bw1n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_lew5v")

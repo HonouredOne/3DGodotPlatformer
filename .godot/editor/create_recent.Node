@@ -1,5 +1,11 @@
+Node
+SpotLight3D
+OmniLight3D
+PointLight2D
+LightmapGI
+CollisionShape3D
+Area3D
 DirectionalLight3D
 Camera3D
-CollisionShape3D
 CharacterBody3D
 StaticBody3D

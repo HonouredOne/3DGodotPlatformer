@@ -2,3 +2,8 @@ res://Scenes/Characters/Player.tscn
 res://addons/script-ide/plugin.gd
 res://Scripts/Player.gd
 res://Scenes/Levels/Level1.tscn
+res://Scenes/Objects/SpikeBlock.tscn
+res://Scripts/SpikeBlock.gd
+res://Scripts/CameraOrbit.gd
+res://Scenes/Objects/RedSpikeBlock.tscn
+res://Scenes/Objects/BlueSpikeBlock.tscn

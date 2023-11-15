@@ -1,14 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://wa5j2ehjqb75"]
+[gd_scene load_steps=7 format=3 uid="uid://wa5j2ehjqb75"]
 
 [ext_resource type="PackedScene" uid="uid://bmt4cf2ksg4js" path="res://Scenes/Platforms/PlatformLarge.tscn" id="1_67toc"]
 [ext_resource type="PackedScene" uid="uid://b73d1s4iglg2j" path="res://Scenes/Characters/Player.tscn" id="2_h6m7e"]
+[ext_resource type="PackedScene" uid="uid://dee8ce44j2adf" path="res://Scenes/Platforms/SlopedPlatformAlt.tscn" id="3_kgh2i"]
+[ext_resource type="PackedScene" uid="uid://c24w2aw5jnj38" path="res://Scenes/Platforms/SlopedPlatform.tscn" id="4_5ieo2"]
+[ext_resource type="PackedScene" uid="uid://bsjewb3ld084h" path="res://Scenes/Objects/BlueSpikeBlock.tscn" id="5_2333k"]
+[ext_resource type="PackedScene" uid="uid://cy72obsirviw3" path="res://Scenes/Objects/RedSpikeBlock.tscn" id="5_rui7l"]
 
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.596049, -0.710407, 0.374229, 0.241844, 0.603262, 0.759991, -0.765661, -0.362487, 0.531382, 0, 3.86817, 0)
+transform = Transform3D(-0.996986, -0.0703189, -0.0327902, 4.71485e-08, -0.422618, 0.906308, -0.0775883, 0.903576, 0.421344, 4.48294, 8.62, 2.64493)
 shadow_enabled = true
+shadow_opacity = 0.65
+shadow_blur = 4.125
 
-[node name="PlatformLarge" parent="." instance=ExtResource("1_67toc")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_h6m7e")]
 
-[node name="Player" parent="." instance=ExtResource("2_h6m7e")]
+[node name="Platforms" type="Node" parent="."]
+
+[node name="PlatformLarge" parent="Platforms" instance=ExtResource("1_67toc")]
+
+[node name="PlatformLarge2" parent="Platforms" instance=ExtResource("1_67toc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39335, -1, 0.0753658)
+
+[node name="PlatformLarge3" parent="Platforms" instance=ExtResource("1_67toc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35506, 0.482676, -3.52807)
+
+[node name="PlatformLarge4" parent="Platforms" instance=ExtResource("1_67toc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.57748, 0.482676, -3.52807)
+
+[node name="SlopedPlatformAlt" parent="Platforms" instance=ExtResource("3_kgh2i")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.4247, 2.46537, 0.114258)
+
+[node name="PlatformLarge6" parent="Platforms" instance=ExtResource("1_67toc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.401, 3.04114, -0.0753582)
+
+[node name="PlatformLarge7" parent="Platforms" instance=ExtResource("1_67toc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4319, 1.41158, 0.0639212)
+
+[node name="SlopedPlatform" parent="Platforms" instance=ExtResource("4_5ieo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2575, 2.37788, -3.55183)
+
+[node name="SpikeBlock" parent="." instance=ExtResource("5_2333k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66128, -0.46098, 0.00751356)
+move_speed = 1.5
+move_direction = Vector3(0, 2, 0)
+
+[node name="SpikeBlock2" parent="." instance=ExtResource("5_rui7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.37826, -0.481023, -1.70947)
+move_speed = 4.0
+move_direction = Vector3(0, 3, 0)
+
+[node name="SpikeBlock3" parent="." instance=ExtResource("5_2333k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42261, 0.950796, 1.47192)
+
+[connection signal="body_entered" from="SpikeBlock" to="SpikeBlock" method="_on_body_entered"]
+[connection signal="body_entered" from="SpikeBlock2" to="SpikeBlock2" method="_on_body_entered"]
+[connection signal="body_entered" from="SpikeBlock3" to="SpikeBlock3" method="_on_body_entered"]
