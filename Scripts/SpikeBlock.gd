@@ -1,6 +1,6 @@
 extends Area3D
 
-@export_range(1.0, 5.0) var move_speed := 1.0
+@export_range(1.0, 5.0, 0.5) var move_speed := 1.0
 @export var move_direction : Vector3
 
 var start_pos : Vector3
