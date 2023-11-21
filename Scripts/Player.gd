@@ -6,7 +6,13 @@ var gravity : float = 20.0
 
 var facing_angle : float
 
+var score = PlayerVariables.current_score
+
 @onready var model : MeshInstance3D = $Model
+@onready var score_text : Label = $ScoreText
+
+func _ready():
+	score_text.text = str("Score: ", score)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -33,3 +39,10 @@ func _physics_process(delta):
 	
 func game_over():
 	get_tree().reload_current_scene()
+
+func add_score(amount):
+	score += amount
+	score_text.text = str("Score: ", score)
+
+func store_score():
+	PlayerVariables.current_score = score

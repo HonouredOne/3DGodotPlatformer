@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wa5j2ehjqb75"]
+[gd_scene load_steps=13 format=3 uid="uid://wa5j2ehjqb75"]
 
 [ext_resource type="PackedScene" uid="uid://bmt4cf2ksg4js" path="res://Scenes/Platforms/PlatformLarge.tscn" id="1_67toc"]
 [ext_resource type="PackedScene" uid="uid://b73d1s4iglg2j" path="res://Scenes/Characters/Player.tscn" id="2_h6m7e"]
@@ -7,8 +7,30 @@
 [ext_resource type="PackedScene" uid="uid://bsjewb3ld084h" path="res://Scenes/Objects/BlueSpikeBlock.tscn" id="5_2333k"]
 [ext_resource type="PackedScene" uid="uid://cy72obsirviw3" path="res://Scenes/Objects/RedSpikeBlock.tscn" id="5_rui7l"]
 [ext_resource type="PackedScene" uid="uid://dty8uh2i3311i" path="res://Scenes/Objects/Spikes.tscn" id="7_3jk4g"]
+[ext_resource type="PackedScene" uid="uid://ummnc8pbywwh" path="res://Scenes/Objects/Coin.tscn" id="8_3oxnc"]
+[ext_resource type="PackedScene" uid="uid://ckq82683kfc80" path="res://Scenes/Objects/EndFlag.tscn" id="9_2usm5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0kko6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4yyk1"]
+sky_material = SubResource("ProceduralSkyMaterial_0kko6")
+
+[sub_resource type="Environment" id="Environment_dayd6"]
+background_mode = 1
+background_color = Color(0.509804, 0.411765, 0.713726, 1)
+sky = SubResource("Sky_4yyk1")
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 2.0
+ssil_enabled = true
+glow_enabled = true
 
 [node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dayd6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.996986, -0.0703189, -0.0327902, 4.71485e-08, -0.422618, 0.906308, -0.0775883, 0.903576, 0.421344, 4.48294, 8.62, 2.64493)
@@ -17,6 +39,7 @@ shadow_opacity = 0.65
 shadow_blur = 4.125
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_h6m7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.668852, 0, -0.597062)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -96,3 +119,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7162, 3.46619, -0.580053)
 
 [node name="Spikes5" parent="Spikes" instance=ExtResource("7_3jk4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9588, 3.38026, -4.25654)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.500166, 0.142639, 0.703949)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.37209, 1.69224, -3.57295)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.59734, 1.7129, -3.54196)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.5705, 3.32449, -3.54196)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.4507, 3.08688, -3.57295)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 13.2895, 3.57242, -3.43865)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 13.4135, 4.19226, -0.112174)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 17.3908, 3.57242, 0.228738)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 19.1987, 3.05589, 0.177084)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("8_3oxnc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 20.645, 2.59101, 0.177084)
+
+[node name="EndFlag" parent="." instance=ExtResource("9_2usm5")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 25.0272, 2.412, -0.525026)
+next_scene = "res://Scenes/Levels/Level2.tscn"

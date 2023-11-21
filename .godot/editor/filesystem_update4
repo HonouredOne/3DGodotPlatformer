@@ -1,6 +1,13 @@
-res://Scripts/SpikeBlock.gd
 res://Scenes/Levels/Level1.tscn
+res://Scripts/Spikes.gd
 res://Scenes/Characters/Player.tscn
 res://Scenes/Objects/RedSpikeBlock.tscn
 res://Scenes/Objects/BlueSpikeBlock.tscn
 res://Scenes/Objects/Spikes.tscn
+res://Scripts/Player.gd
+res://Scenes/Objects/Coin.tscn
+res://Scripts/Coin.gd
+res://Scenes/Objects/EndFlag.tscn
+res://Scripts/EndFlag.gd
+res://Scenes/Levels/Level2.tscn
+res://Scripts/PlayerVariables.gd
